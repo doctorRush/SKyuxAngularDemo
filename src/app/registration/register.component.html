@@ -1,0 +1,82 @@
+<app-nav>
+</app-nav>
+<body>
+<main>
+  <sky-fluid-grid>
+    <sky-row>
+      <sky-column>
+          <br/>
+        <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+            <div class="sky-form-group" style="max-width: 30%">
+                <label for="form-group-firstName" class="sky-control-label">
+                  First name
+                </label>
+                <input class="sky-form-control" id="First" formControlName="firstName" type="text" >
+
+                <p *ngIf="registerForm.controls.firstName.errors && (registerForm.controls.firstName.touched || registerForm.controls.firstName.touched)" class="sky-error-label">This filed is Required!!</p>
+            </div>
+            <div class="sky-form-group" style="max-width: 30%">
+                <label for="form-group-lastName" class="sky-control-label">
+                  Last Name
+                </label>
+                <input class="sky-form-control" id="First" formControlName="lastName" type="text" >
+                <p *ngIf="registerForm.controls.lastName.errors && (registerForm.controls.lastName.touched || registerForm.controls.lastName.touched)" class="sky-error-label">This filed is Required!!</p>
+            </div>
+            <div class="sky-form-group" style="max-width: 30%">
+                <label for="form-group-lastName" class="sky-control-label">
+                  Email
+                </label>
+                <input class="sky-form-control" id="First" formControlName="email" type="text" >
+                <p *ngIf="registerForm.controls.email.errors && (registerForm.controls.email.touched || registerForm.controls.email.touched)" class="sky-error-label">Please provide a valid Email Address!!</p>
+            </div>
+            <div class="sky-form-group" style="max-width: 30%">
+                <label for="form-group-lastName" class="sky-control-label">
+                  Age
+                </label>
+                <input class="sky-form-control" id="First" formControlName="age" type="text" >
+                <p *ngIf="registerForm.controls.age.errors && (registerForm.controls.age.touched || registerForm.controls.age.touched)" class="sky-error-label">This filed is Required!!</p>
+            </div>
+            <div class="sky-form-group" style="max-width: 30%">
+                <label for="form-group-lastName" class="sky-control-label">
+                  CompanyId
+                </label>
+                <input class="sky-form-control" id="First" formControlName="companyId" type="text" >
+                <p *ngIf="registerForm.controls.companyId.errors && (registerForm.controls.companyId.touched || registerForm.controls.companyId.touched)" class="sky-error-label">This filed is Required!!</p>
+            </div>
+            <div class="sky-form-group" style="max-width: 30%">
+                <sky-input-box>
+                    <label
+                      class="sky-control-label"
+                      [for]="dateInput.id"
+                    >
+                      Date
+                    </label>
+                    <sky-datepicker>
+                      <input
+                        formControlName="doj"
+                        id="myDate"
+                        skyDatepickerInput
+                        skyId
+                        type="text"
+                        #dateInput="skyId"
+                      />
+                    </sky-datepicker>
+                    <p *ngIf="registerForm.controls.doj.errors && (registerForm.controls.doj.touched || registerForm.controls.doj.touched)" class="sky-error-label">This filed is Required!!</p>
+                  </sky-input-box>
+            </div>
+            <div class="sky-form-group" style="max-width: 30%">
+                <label for="form-group-lastName" class="sky-control-label">
+                  Salary
+                </label>
+                <input class="sky-form-control" id="First" formControlName="salary" type="text" >
+                <p *ngIf="registerForm.controls.salary.errors && (registerForm.controls.salary.touched || registerForm.controls.salary.touched)" class="sky-error-label">This filed is Required!!</p>
+            </div>
+            <button class="sky-btn sky-btn-primary" type="submit">Submit!</button>
+            
+
+        </form>
+      </sky-column>
+    </sky-row>
+  </sky-fluid-grid>
+</main>
+</body>

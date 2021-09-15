@@ -1,0 +1,61 @@
+<app-nav>
+</app-nav>
+
+<body>
+<main>
+  
+    <sky-fluid-grid>
+      <sky-row>
+        <sky-column>
+          <h1>
+            Users List
+          </h1>
+          <table border="1px">
+            <thead>
+              <tr>
+                  <th width="100" *ngFor = "let column of headers">
+                    {{column}}
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let users of usersList">
+                <td width="100" >
+                     {{users.id}}
+                </td>
+                <td width="100" >
+                    {{users.firstName | minorPipe:users.age}}
+               </td>
+               <td width="100" >
+                {{users.lastName}}
+           </td>
+           <td width="100" >
+            {{users.age}}
+       </td>
+       <td width="100" >
+        {{users.email}}
+   </td>
+   <td width="100" >
+    {{users.companyId}}
+   </td>
+   <td width="200" >
+    {{users.doj | skyDate:'longDate'}}
+   </td>
+   <td width="100" >
+    {{users.salary | skyNumeric:{digits: 2, format: 'currency', iso: 'USD'} }}
+   </td>
+<td width="100" >
+    <sky-icon class="hovericons"icon="pencil" (click)="onOpenModalClick(users)"></sky-icon>
+    <sky-icon class="hovericons"icon="trash-o" style="padding-left: 10px;" (click)="onDeleteClick(users)"></sky-icon>
+</td>
+             </tr>
+            </tbody>
+        </table>
+
+
+</sky-column>
+</sky-row>
+</sky-fluid-grid>
+
+</main>
+</body>

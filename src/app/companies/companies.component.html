@@ -1,0 +1,39 @@
+<app-nav></app-nav>
+<main>
+  <body>
+    <sky-fluid-grid>
+      <sky-row>
+        <sky-column>
+          <h1>
+            Companies List
+          </h1>
+         
+          <table border="1px">
+            <thead>
+              <tr>
+                  <th width="100" *ngFor = "let column of headers">
+                    {{column}}
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let company of companyList">
+                <td width="100" >
+                     {{company.id}}
+                </td>
+                <td width="100" >
+                    {{company.name}}
+               </td>
+               <td width="500" >
+                   {{company.description}}
+              </td>
+             </tr>
+            </tbody>
+        </table>
+
+
+</sky-column>
+</sky-row>
+</sky-fluid-grid>
+</body>
+</main>
