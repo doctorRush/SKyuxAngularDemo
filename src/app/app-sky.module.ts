@@ -17,7 +17,7 @@ import {
 } from '@skyux/indicators';
 
 import {
-  SkyFluidGridModule
+  SkyFluidGridModule, SkyToolbarModule
 } from '@skyux/layout';
 
 import {
@@ -33,6 +33,21 @@ import { SkyInputBoxModule } from '@skyux/forms';
 import { SkyIdModule, SkyNumericModule } from '@skyux/core';
 import { SkyDatepickerModule, SkyDatePipeModule } from '@skyux/datetime';
 
+import { SkyAgGridModule } from '@skyux/ag-grid';
+
+import { SkyDataManagerModule } from '@skyux/data-manager';
+
+
+
+import {SkyListViewGridModule} from '@skyux/list-builder-view-grids'
+
+import { SkyListModule } from '@skyux/list-builder';
+
+// import { SkyGridModule } from '@skyux/grids';
+
+import { SkyLookupModule, SkySearchModule } from '@skyux/lookup';
+
+import { SkyGridModule } from '@skyux/grids';
 
 
 @NgModule({
@@ -51,6 +66,15 @@ import { SkyDatepickerModule, SkyDatePipeModule } from '@skyux/datetime';
     SkyDatePipeModule,
     SkyWaitModule,
     SkyNumericModule,
+    SkyAgGridModule,  
+    SkyDataManagerModule,
+    SkyListViewGridModule,
+    SkyListModule,
+    SkyGridModule,
+    SkyLookupModule,
+    SkyToolbarModule,
+    SkySearchModule
+   
 
   ],
 

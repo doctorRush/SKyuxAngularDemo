@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
-import { UserTitlePipe } from './users/userTitle.pipe';
+import { UserTitlePipe } from './Components/users/userTitle.pipe';
 
 
 

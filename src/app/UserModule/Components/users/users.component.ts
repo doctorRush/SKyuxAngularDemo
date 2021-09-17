@@ -5,7 +5,7 @@ import { SkyModalService } from '@skyux/modals';
 import { EditModalComponent } from '../edit/edit-modal.component';
 import { SkyToastService, SkyToastType } from '@skyux/toast';
 
-import { UserInterface, USER_SERVICE } from '../services/user.service';
+import { UserInterface, USER_SERVICE } from '../../Services/user.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',

@@ -4,7 +4,7 @@ import { tap } from 'rxjs/operators';
 
 @Injectable({providedIn:'root'})
 export class AppInitializerService {
-  private isItialized: boolean = false;
+  private isInitialized: boolean = false;
   private appSettings: any;
 
   constructor(private http: HttpClient) {}
@@ -12,12 +12,12 @@ export class AppInitializerService {
   initialize() {
 
     console.log("App initialised")
-    if (!this.isItialized) {
+    if (!this.isInitialized) {
 
-      this.isItialized = true;
+      this.isInitialized = true;
       return this.http.get('assets/app-setting.json').pipe(
-        tap((d) => {
-          this.appSettings = d;
+        tap((res) => {
+          this.appSettings = res;
         })
       );
     }

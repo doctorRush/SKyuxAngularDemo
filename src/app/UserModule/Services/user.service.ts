@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, InjectionToken } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../users/user';
+import { User } from '../Components/users/user';
 
 export interface UserInterface{
   getAllUsers:()=>Observable<User[]>;

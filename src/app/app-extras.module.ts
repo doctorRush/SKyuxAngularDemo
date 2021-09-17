@@ -9,15 +9,20 @@ import { AppRoutingModule } from './app-routing.module';
 import {
   AppSkyModule
 } from './app-sky.module';
-import {  AuthGuardService } from './services/auth.guard';
-import { EditModalComponent } from './edit/edit-modal.component';
+import {  AuthGuardService } from './Helpers/auth.guard';
+import { EditModalComponent } from './UserModule/Components/edit/edit-modal.component';
 import { AppErrorHandler } from './Helpers/AppErrorHandler';
 import { LoggerInterceptor } from './Helpers/logger.interceptor';
-import { AppInitializerService } from './services/app-initializer.service';
-import { UserService, USER_SERVICE } from './services/user.service';
-import { PipeModule } from './PipeModule';
+import { AppInitializerService } from './Helpers/app-initializer.service';
 import { SkyAppLocaleProvider } from '@skyux/i18n';
 import { TestLocaleProvider } from './test-locale-provider';
+import { PipeModule } from './UserModule/PipeModule';
+import { UserModule } from './UserModule/user.module';
+import { CompanyModule } from './CompanyModule/company.module';
+
+
+
+
 
 
 export function appInitializerFactory(service: AppInitializerService) {
@@ -30,17 +35,16 @@ export function appInitializerFactory(service: AppInitializerService) {
    exports: [
     AppSkyModule,
     AppRoutingModule,
-    PipeModule
+    PipeModule,
+    UserModule,
+    CompanyModule
 
   ],
   entryComponents: [
     EditModalComponent
   ],
   providers:[
-    {
-      provide:USER_SERVICE,
-      useClass:UserService
-    },
+   
     {
        provide: APP_INITIALIZER,
        useFactory: appInitializerFactory,
