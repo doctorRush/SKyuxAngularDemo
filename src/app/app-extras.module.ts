@@ -19,6 +19,7 @@ import { TestLocaleProvider } from './test-locale-provider';
 import { PipeModule } from './UserModule/PipeModule';
 import { UserModule } from './UserModule/user.module';
 import { CompanyModule } from './CompanyModule/company.module';
+import {  AgGridModule } from 'ag-grid-angular';
 
 
 
@@ -32,12 +33,14 @@ export function appInitializerFactory(service: AppInitializerService) {
 
 
 @NgModule({
+  imports: [AgGridModule.withComponents([])],
    exports: [
     AppSkyModule,
     AppRoutingModule,
     PipeModule,
     UserModule,
-    CompanyModule
+    CompanyModule,
+    AgGridModule
 
   ],
   entryComponents: [
