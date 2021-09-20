@@ -49,10 +49,10 @@ export class CompaniesComponent implements OnInit {
   
   public gridData:any[];
   public columnDefs = [
-    {
-      field: 'selected',
-      type: SkyCellType.RowSelector
-    },
+    // {
+    //   field: 'selected',
+    //   type: SkyCellType.RowSelector
+    // },
     // {
     //   colId: 'context',
     //   headerName: '',
@@ -67,12 +67,12 @@ export class CompaniesComponent implements OnInit {
     {
       field: 'name',
       headerName: 'Company Name',
-      maxWidth: 60
+    
     },
     {
       field: 'description',
       headerName: 'Description',
-      maxWidth: 600
+      
     },
 
   ];
@@ -93,6 +93,7 @@ export class CompaniesComponent implements OnInit {
      })
     this.gridOptions = {
       columnDefs: this.columnDefs,
+      suppressRowTransform: true,
       onGridReady: gridReadyEvent => this.onGridReady(gridReadyEvent)
     };
     this.gridOptions = this.agGridService.getGridOptions({ gridOptions: this.gridOptions });
